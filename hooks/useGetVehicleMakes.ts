@@ -8,6 +8,8 @@ export function useGetVehicleMakes() {
     const { data, isLoading, isError, refetch, isRefetching } = useQuery({
         queryKey: ["vehicleMakes"],
         queryFn: fetchVehicleMakes,
+        staleTime: 1000 * 60 * 24,
+        gcTime: Infinity,
     });
 
     const options = useMemo(
