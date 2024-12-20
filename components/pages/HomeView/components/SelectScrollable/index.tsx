@@ -13,7 +13,7 @@ import {
 
 interface SelectScrollableProps {
     value: string;
-    options: string[];
+    options: { label: string, value: string }[];
     onChange?: () => void;
     className?: string;
     selectLabel: string;
@@ -36,7 +36,7 @@ export function SelectScrollable({
             <SelectContent>
                 <SelectGroup>
                     <SelectLabel>{selectLabel}</SelectLabel>
-                    {options.map((option) => <SelectItem key={option} value={option}>{option}</SelectItem>)}
+                    {options.map((option) => <SelectItem key={option.label + option.value} value={option.value}>{option.label}</SelectItem>)}
                 </SelectGroup>
             </SelectContent>
         </Select>
