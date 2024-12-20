@@ -15,7 +15,7 @@ const generateYears = (startYear: number, endYear: number) =>
 
 export function SelectModelYear({ className, control }: Readonly<SelectModelYearProps>) {
     const currentYear = new Date().getFullYear();
-    const years = generateYears(2014, currentYear);
+    const years = generateYears(2014, currentYear).map((year) => ({ label: year, value: year }));
 
     return (
         <Controller control={control} name="year" render={({ field }) => (

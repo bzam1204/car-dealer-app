@@ -19,17 +19,18 @@ interface SelectModelYearProps {
 export function SelectVehicleMakes({ control, className }: Readonly<SelectModelYearProps>) {
     const {
         makes,
+        optionsMakes,
         isErrorMakes,
         refetchMakes,
         isLoadingMakes,
         isRefetchingMakes,
     } = useGetVehicleMakes()
-
+   
     if (isLoadingMakes) {
         return <LoadingIcon size="22" className="text-blue-500" />
     }
 
-    if (!makes || isErrorMakes) {
+    if (!makes || isErrorMakes || !optionsMakes) {
         return (
             <div className="flex gap-2 items-center">
                 <Button
@@ -45,11 +46,12 @@ export function SelectVehicleMakes({ control, className }: Readonly<SelectModelY
         );
     }
 
+
     return (
         <Controller control={control} name="make" render={({ field }) =>
             <SelectScrollable
                 value={field.value}
-                options={makes.map(m => m.MakeName).sort((a, b) => a.localeCompare(b))}
+                options={optionsMakes}
                 onChange={field.onChange}
                 className={className}
                 selectLabel="Makes"

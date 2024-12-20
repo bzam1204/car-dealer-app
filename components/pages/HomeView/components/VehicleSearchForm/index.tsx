@@ -15,7 +15,7 @@ export interface Inputs {
 }
 
 export function VehicleSearchForm() {
-  const { handleSubmit, getFieldState, watch, control } = useForm<Inputs>({
+  const { getFieldState, watch, control } = useForm<Inputs>({
     defaultValues: {
       make: '',
       year: ''
@@ -28,7 +28,6 @@ export function VehicleSearchForm() {
   const disable = !(getFieldState('make').isDirty && getFieldState('year').isDirty);
 
   return (
-    <form onSubmit={handleSubmit(data => console.log(data))}>
       <div className="flex flex-col gap-4">
         <div className="flex gap-2 items-center">
           <p className="flex-[1]">Select a Maker: </p>
@@ -39,11 +38,10 @@ export function VehicleSearchForm() {
           <SelectModelYear control={control} className="flex-[2] md:flex-[4]" />
         </div>
         <div className={`flex-1 ${disable && "pointer-events-none"}`}>
-          <Link href={`/result/${selectedMake}/${selectedYear}`}>
+          <Link target="_blank" href={`/results/${selectedMake}/${selectedYear}`}>
             <Button className="w-full" disabled={disable} type="submit">Next</Button>
           </Link>
         </div>
       </div>
-    </form>
   );
 }
