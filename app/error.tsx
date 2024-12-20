@@ -1,8 +1,9 @@
 'use client' // Error boundaries must be Client Components
 
+import { useEffect } from 'react'
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { useEffect } from 'react'
 
 export default function ErrorBoundary({
     error,

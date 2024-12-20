@@ -7,8 +7,9 @@ import {
   TableHeader,
   TableCaption,
 } from "@/components/ui/table";
-import { fetchVehicleMakesAndYears } from "@/lib/api/fetchVehicleMakesAndYears";
+
 import { fetchVehicleModels } from "@/lib/api/fetchVehicleModel";
+import { fetchVehicleMakesAndYears } from "@/lib/api/fetchVehicleMakesAndYears";
 
 export async function generateStaticParams() {
   const { makes, years } = await fetchVehicleMakesAndYears();
@@ -35,13 +36,13 @@ export default async function VehicleModelsPage({ params }: Readonly<{ params: {
 
   return (
     <div className="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-12">
-      <h1 className="text-3xl text-gray-900 leading-tight">Vehicle Models for {makeId} in {year}</h1>
+      <h1 className="text-3xl text-gray-900 leading-tight">Vehicle Models for {models[0].Make_Name} in {year}</h1>
       <Table>
         <TableCaption>Models Found: {models.length}</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">ID</TableHead>
-            <TableHead>Model Name</TableHead>
+            <TableHead>Name</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
