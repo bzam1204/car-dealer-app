@@ -1,3 +1,35 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+    "extends": [
+        "next/core-web-vitals",
+        "next/typescript",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": ["@typescript-eslint", "react", "simple-import-sort", "import"],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+        "@typescript-eslint/no-explicit-any": "warn",
+
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error",
+
+        "no-console": "warn",
+        "eqeqeq": "error",
+        "no-unused-vars": "off",
+        "prefer-const": "error"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
 }

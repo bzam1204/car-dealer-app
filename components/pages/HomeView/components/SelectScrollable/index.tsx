@@ -1,19 +1,18 @@
-import * as React from "react"
-
-import { SelectGroup } from "@radix-ui/react-select";
+import { SelectGroup } from '@radix-ui/react-select';
+import * as React from 'react';
 
 import {
     Select,
+    SelectContent,
     SelectItem,
     SelectLabel,
-    SelectValue,
-    SelectContent,
     SelectTrigger,
-} from "@/components/ui/select"
+    SelectValue,
+} from '@/components/ui/select';
 
 interface SelectScrollableProps {
     value: string;
-    options: { label: string, value: string }[];
+    options: { label: string; value: string }[];
     onChange?: () => void;
     className?: string;
     selectLabel: string;
@@ -29,16 +28,20 @@ export function SelectScrollable({
     placeholder,
 }: Readonly<SelectScrollableProps>) {
     return (
-        <Select defaultValue={value} onValueChange={onChange} >
-            <SelectTrigger className={className} >
+        <Select defaultValue={value} onValueChange={onChange}>
+            <SelectTrigger className={className}>
                 <SelectValue placeholder={placeholder} />
             </SelectTrigger>
             <SelectContent>
                 <SelectGroup>
                     <SelectLabel>{selectLabel}</SelectLabel>
-                    {options.map((option) => <SelectItem key={option.label + option.value} value={option.value}>{option.label}</SelectItem>)}
+                    {options.map((option) => (
+                        <SelectItem key={option.label + option.value} value={option.value}>
+                            {option.label}
+                        </SelectItem>
+                    ))}
                 </SelectGroup>
             </SelectContent>
         </Select>
-    )
+    );
 }

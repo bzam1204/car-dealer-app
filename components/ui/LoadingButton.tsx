@@ -1,4 +1,4 @@
-import { Loader } from "lucide-react";
+import { Loader } from 'lucide-react';
 
 interface LoadingButtonProps {
     size?: string;
@@ -6,5 +6,5 @@ interface LoadingButtonProps {
 }
 
 export function LoadingIcon({ size, className }: Readonly<LoadingButtonProps>) {
-    return <Loader size={size} className={`animate-spin ${className}`} />
+    return <Loader size={size} className={`animate-spin ${className}`} />;
 }
