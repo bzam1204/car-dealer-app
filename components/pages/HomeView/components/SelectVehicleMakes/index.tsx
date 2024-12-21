@@ -1,3 +1,5 @@
+'use client';
+
 import { RotateCwIcon } from 'lucide-react';
 import { Control, Controller } from 'react-hook-form';
 

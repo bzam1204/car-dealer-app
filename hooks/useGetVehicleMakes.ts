@@ -1,8 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
+import { useMemo } from 'react';
 
 import { fetchVehicleMakes } from '@/lib/api/fetchVehicleMakes';
-
-import { useMemo } from 'react';
 
 export function useGetVehicleMakes() {
     const { data, isLoading, isError, refetch, isRefetching } = useQuery({

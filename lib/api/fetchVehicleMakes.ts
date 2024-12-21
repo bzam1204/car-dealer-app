@@ -2,7 +2,7 @@ import { VehicleMake } from '../types/VehicleMake';
 
 export async function fetchVehicleMakes(): Promise<VehicleMake[]> {
     try {
-        const baseUrl = process.env.API_BASE_URL;
+        const baseUrl = process.env.API_URL;
         const url = `${baseUrl}/vehicles/GetMakesForVehicleType/car?format=json`;
 
         const response = await fetch(url);
