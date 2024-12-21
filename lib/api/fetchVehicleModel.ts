@@ -2,7 +2,8 @@ import { VehicleModel } from '../types/VehicleModel';
 
 const fetchVehicleModels = async (year: string, makeId: string): Promise<VehicleModel[]> => {
     try {
-        const baseUrl = process.env.API_BASE_URL;
+        const baseUrl = process.env.API_URL;
+
         const url = `${baseUrl}/vehicles/GetModelsForMakeIdYear/makeId/${makeId.trim()}/modelyear/${year.trim()}?format=json`;
 
         const response = await fetch(url);

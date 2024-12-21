@@ -1,5 +1,6 @@
 'use client';
 
+import { RotateCwIcon } from 'lucide-react';
 import { useEffect } from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -25,8 +26,9 @@ export default function ErrorBoundary({
                     <h2>Something went wrong!</h2>
                 </CardHeader>
                 <CardContent>
-                    <Button className="bg-red-400" onClick={() => reset()}>
-                        Try again
+                    <Button className="bg-red-500" size="sm" onClick={() => reset()}>
+                        {<RotateCwIcon />}
+                        Retry
                     </Button>
                 </CardContent>
             </Card>
