@@ -12,7 +12,7 @@
 
 | ![alt text](image-2.png) |
 | :----------------------: |
-|     _Html response_      |
+|     _Build without static generation_      |
 
 2. As we are working with a form, I feel more comfortable using the use query props to deal with the request state rendering, however, I know how and when to use this feature.
 
