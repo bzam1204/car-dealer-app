@@ -1,10 +1,9 @@
-import { VehicleMake } from "../types/VehicleMake";
-import { fetchVehicleMakes } from "./fetchVehicleMakes";
+import { VehicleMake } from '../types/VehicleMake';
+import { fetchVehicleMakes } from './fetchVehicleMakes';
 
 export async function fetchVehicleMakesAndYears(): Promise<{
     years: string[];
     makes: VehicleMake[];
-   
 }> {
     const makes = await fetchVehicleMakes();
 
@@ -14,6 +13,4 @@ export async function fetchVehicleMakesAndYears(): Promise<{
 }
 
 const generateYears = (startYear: number, endYear: number) =>
-    Array.from({ length: endYear - startYear }, (_, i) =>
-        (endYear - i).toString()
-    );
+    Array.from({ length: endYear - startYear }, (_, i) => (endYear - i).toString());
